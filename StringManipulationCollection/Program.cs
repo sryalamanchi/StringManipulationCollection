@@ -10,6 +10,8 @@ namespace StringManipulationCollection
           
             Console.WriteLine(Camelcase("dsddsTwoThree"));
             Console.WriteLine(MinimumNumberPasswordValidation(2, "#HackerRank"));
+            Console.WriteLine(ReverseString("SRINI YALAMANCHI"));
+            Console.ReadLine();
         }
         #region SuperReducingString
         static string superReducedString(string s)
@@ -55,9 +57,27 @@ namespace StringManipulationCollection
             }
             return counter;
         }
-		#endregion
+        #endregion
+        #region StringReverseWithoutReverse
+			
+        static string ReverseString(string  inputString)
+		{
+			//string inputString = "SRINI YALAMANCHI";
+			string reverseString = "";
+			int length = inputString.Length - 1;
+			while (length >= 0)
+			{
+				reverseString = reverseString + inputString[length];
+				length--;
+			}
 
-		#region Password Validation
+			Console.WriteLine(reverseString);
+            return reverseString;
+           // Console.ReadLine();
+		}
+
+        #endregion
+        #region Password Validation
 
         static int MinimumNumberPasswordValidation(int n, string password)
 		{
@@ -66,7 +86,7 @@ namespace StringManipulationCollection
             // lower_case = "abcdefghijklmnopqrstuvwxyz";
             // upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             string special_characters = "!@#$%^&*()-+";
-            int counter = 0, minCount = 0;
+            int counter = 0;
             bool uppercase = false, lowercase = false, number = false, special = false;
 
             if (n > 1)
@@ -100,6 +120,5 @@ namespace StringManipulationCollection
             return Math.Max(counter, 6 - n);
         }
 		#endregion
-
 	}
 }

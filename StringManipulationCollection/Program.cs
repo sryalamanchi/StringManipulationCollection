@@ -6,11 +6,14 @@ namespace StringManipulationCollection
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine(superReducedString("aaabccd"));
-          
-            Console.WriteLine(Camelcase("dsddsTwoThree"));
-            Console.WriteLine(MinimumNumberPasswordValidation(2, "#HackerRank"));
-            Console.WriteLine(ReverseString("SRINI YALAMANCHI"));
+			//Console.WriteLine(superReducedString("aaabccd"));
+			Console.WriteLine(FizzBuzz(15));
+
+
+			//Console.WriteLine(Camelcase("dsddsTwoThree"));
+			//Console.WriteLine(MinimumNumberPasswordValidation(2, "#HackerRank"));
+			//Console.WriteLine(ReverseString("SRINI YALAMANCHI"));
+			FizzBuzz(100);
             Console.ReadLine();
         }
         #region SuperReducingString
@@ -202,5 +205,35 @@ namespace StringManipulationCollection
             return Math.Max(counter, 6 - n);
         }
 		#endregion
+		#region FizzBuzz
+		public static string FizzBuzz(int n)
+		{
+			//n = 15;
+			string s = "";
+			for (int i = 0; i <= n; i++)
+			{
+				var mod5 = i % 5;
+				var mod3 = i % 3;
+				if (mod3 == 0 && mod5 == 0)
+				{
+					s= "FizzBuzz";
+				}
+				if (mod3 == 0)
+				{
+					//s = "Fizz";
+					s= "Fizz";
+				}
+				if (mod5 == 0)
+				{
+					
+					s= "Buzz";
+				}
+				//return s;
+			}
+			return s;
+
+		}
 	}
+	#endregion
 }
+

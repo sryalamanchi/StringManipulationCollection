@@ -8,13 +8,15 @@ namespace StringManipulationCollection
 		{
 			string s = superReducedString("aaabccd");
             Console.WriteLine(s);
+            Console.WriteLine(Camelcase("dsddsTwoThree"));
 
         }
+        #region SuperReducingString
         static string superReducedString(string s)
         {
             //inputstring aaabcddd
 
-            
+
             if (s.Trim().Length > 0)
             {
                 for (int i = 0; i < s.Length - 1; i++)
@@ -34,6 +36,28 @@ namespace StringManipulationCollection
             return s;
 
         }
+        #endregion
+        #region CamelCase
+        static int Camelcase(string s)
+        {
+
+            int counter = 1;
+            if (s.Trim().Length > 0)
+            {
+                for (int i = 1; i < s.Length - 1; i++)
+                {
+                    if (Char.IsUpper(s[i]))
+                    {
+                        counter++;
+                    }
+                }
+
+            }
+            return counter;
+        }
+        #endregion
+
+
 
     }
 }

@@ -13,6 +13,7 @@ namespace StringManipulationCollection
         static string superReducedString(string s)
         {
             //inputstring aaabcddd
+
             
             if (s.Trim().Length > 0)
             {

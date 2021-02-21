@@ -75,11 +75,93 @@ namespace StringManipulationCollection
             return reverseString;
            // Console.ReadLine();
 		}
+        static void ReverseArray()
+		{
+			int[] arr = new int[] { 1, 5, 8, 9, 0 };
+			Console.WriteLine(arr);
+			Array.Sort(arr);
+			foreach (var value in arr)
+			{
+				Console.WriteLine(value + "Sort");
+			}
 
-        #endregion
-        #region Password Validation
+			Array.Reverse(arr);
+			foreach (var value in arr)
+			{
+				Console.WriteLine(value + "Reverse");
+			}
+			//var result = arr.OrderBy(c => c).ToArray().First();
+			////foreach (var item in result)
+			////{
+			//	Console.WriteLine(result);
+			//}
+			//int temp;
+			//for (int i=0; i<arr.Length-1; i++ )
+			//{
+			//	for (int j=i+1;j<arr.Length; j++)
+			//	{
+			//		if (arr[i] < arr[j])
+			//		{
+			//			temp = arr[i];
+			//			arr[i] = arr[j];
+			//			arr[j] = temp;
+			//		}
+			//	}
+			//	foreach (var value in arr)
+			//	{
+			//		Console.WriteLine(value + "");
+			//	}
+			//Sorting Descending
+			int[] intArray = new int[] { 2, 3, 4, 5, 9 };
+			int temp = 0;
+			for (int i = 0; i <= intArray.Length - 1; i++)
+			{
+				for (int j = i + 1; j < intArray.Length; j++)
+				{
+					if (intArray[i] < intArray[j])
+					{
+						temp = intArray[i];
+						intArray[i] = intArray[j];
+						intArray[j] = temp;
+					}
+				}
+			}
+			Console.WriteLine("Array Sort iscending Order:");
+			foreach (var item in intArray)
+			{
+				Console.WriteLine(item);
 
-        static int MinimumNumberPasswordValidation(int n, string password)
+			}
+			Console.ReadLine();
+			//Sorting Asceending.
+		#region SortArrayWithoutSort
+			
+			int[] input = new int[] { 2, 3, 4, 5, 9 };
+			int result = 0;
+			for (int i = 0; i <= input.Length - 1; i++)
+			{
+				for (int j = i + 1; j < input.Length; j++)
+				{
+					if (input[i] > input[j])
+					{
+						result = input[i];
+						input[i] = input[j];
+						input[j] = result;
+					}
+				}
+			}
+			Console.WriteLine("Array Sort Ascending Order:");
+			foreach (var i in input)
+			{
+				Console.WriteLine(i);
+
+			}
+		}
+		#endregion
+		#endregion
+		#region Password Validation
+
+		static int MinimumNumberPasswordValidation(int n, string password)
 		{
             // Return the minimum number of characters to make the password strong
             // numbers = "0123456789";
